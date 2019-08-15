@@ -8,8 +8,8 @@
         android:background="#cccccc"
         tools:context=".MainActivity">
 
-    <com.rain.liba_customviewutil.widget.SuperBubbleCoolView android:layout_width="200dp"
+    <com.rain.liba_customviewutil.widget.SuperBubbleCoolView android:layout_width="150dp"
                                                              android:layout_gravity="center"
-                                                             android:layout_height="200dp"/>
+                                                             android:layout_height="150dp"/>
 
 </FrameLayout>

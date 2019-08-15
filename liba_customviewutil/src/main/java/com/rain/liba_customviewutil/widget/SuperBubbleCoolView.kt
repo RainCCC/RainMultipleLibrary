@@ -31,19 +31,19 @@ class SuperBubbleCoolView : View {
     //控件的真实高度
     private var mRealHeight = 0
     //当控件没设死高度时的默认宽度
-    private var mDefaultWidth = DensityUtils.dp2px(context, 200f)
+    private var mDefaultWidth = DensityUtils.dp2px(context, 150f)
     //当控件没设死高度时的默认高度
-    private var mDefaultHeight = DensityUtils.dp2px(context, 200f)
+    private var mDefaultHeight = DensityUtils.dp2px(context, 150f)
     //内边距用于做阴影之类的
-    private var mPadding = DensityUtils.dp2px(context, 12.5f)
+    private var mPadding = DensityUtils.dp2px(context, 10f)
     private var mPercent = 30f
     private var mSpeedUp = 0.1f
     private var mSpeedGo = 2f
     private var mCurrentHeight = 0f
     private var mWaveCount = 0
     private var mStartWidth = 0f
-    private val mWaveWidth = DensityUtils.dp2px(context, 100f).toFloat()
-    private val mWaveHeight = DensityUtils.dp2px(context, 20f).toFloat()
+    private val mWaveWidth = DensityUtils.dp2px(context, 150f).toFloat()
+    private val mWaveHeight = DensityUtils.dp2px(context, 15f).toFloat()
     private var mIsUp = true
 
     /**
