@@ -1,1 +1,1 @@
-include ':app', ':liba_customviewutil'
+include ':app', ':liba_customviewutil', ':liba_rainbaseadapter'

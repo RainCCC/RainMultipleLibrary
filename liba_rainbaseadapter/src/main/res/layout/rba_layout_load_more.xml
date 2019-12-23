@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/base_adapter_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+    <LinearLayout
+            android:id="@+id/base_adapter_ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:visibility="visible">
+
+        <ProgressBar
+                android:id="@+id/base_adapter_pb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="5dp" />
+
+        <TextView
+                android:id="@+id/base_adapter_tv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rba_loading"
+                android:textColor="@color/rba_tv_load_more"
+                android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/base_adapter_ll_finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:visibility="gone">
+
+        <TextView
+                android:id="@+id/base_adapter_tv_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rba_load_finish"
+                android:textColor="@color/rba_tv_load_more"
+                android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/base_adapter_ll_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:visibility="gone">
+
+        <TextView
+                android:id="@+id/base_adapter_tv_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rba_load_fail"
+                android:textColor="@color/rba_tv_load_more"
+                android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

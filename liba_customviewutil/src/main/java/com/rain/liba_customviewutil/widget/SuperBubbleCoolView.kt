@@ -178,18 +178,18 @@ class SuperBubbleCoolView : View {
             canvas.drawBitmap(mBgBitmap, mMatrix, null)
 
             mLayerId = canvas.saveLayer(mRectF, mDrawPaint, Canvas.ALL_SAVE_FLAG)
-            canvas.drawBitmap(mSrcBitmap, 0f, 0f, mDrawPaint)
+            mSrcBitmap?.let { it1 -> canvas.drawBitmap(it1, 0f, 0f, mDrawPaint) }
             mDrawPaint.xfermode = mPorterDuffXfermode
             drawDstBitmap()
-            canvas.drawBitmap(mDstBitmap, 0f, 0f, mDrawPaint)
+            mDstBitmap?.let { it1 -> canvas.drawBitmap(it1, 0f, 0f, mDrawPaint) }
             mDrawPaint.xfermode = null
             canvas.restoreToCount(mLayerId)
 
             mLayerId = canvas.saveLayer(mRectF, mDrawPaint, Canvas.ALL_SAVE_FLAG)
-            canvas.drawBitmap(mSrcBitmap, 0f, 0f, mDrawPaint)
+            mSrcBitmap?.let { it1 -> canvas.drawBitmap(it1, 0f, 0f, mDrawPaint) }
             mDrawPaint.xfermode = mPorterDuffXfermode
             drawDst2Bitmap()
-            canvas.drawBitmap(mDst2Bitmap, 0f, 0f, mDrawPaint)
+            mDst2Bitmap?.let { it1 -> canvas.drawBitmap(it1, 0f, 0f, mDrawPaint) }
             mDrawPaint.xfermode = null
             canvas.restoreToCount(mLayerId)
 
