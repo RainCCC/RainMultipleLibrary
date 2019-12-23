@@ -4,4 +4,5 @@ RainBaseAdapter
 开始使用
 
 基于AndroidX开发，使用前请确保代码已升级为AndroidX
+
 compile 'com.rain:RainBaseAdapter:1.0.0'
