@@ -15,33 +15,32 @@ class MainActivity : AppCompatActivity() {
 
     private val mList = arrayListOf<String>()
 
-    private var mAdapter: RainBaseRvAdapter<String>? = null
+    private var mAdapter: MainAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         vRv.layoutManager = LinearLayoutManager(this)
-        mAdapter = object : RainBaseRvAdapter<String>(this, mList) {
-            override fun getLayoutViewId(viewType: Int): Int {
-                return R.layout.adapter_main
-            }
-
-            override fun convertData(holder: RainBaseRvViewHolder?, entity: String?, position: Int) {
-                holder?.getTextView(R.id.vTvContent)?.text = entity
-            }
-
-
-        }
+        mAdapter = MainAdapter(this,mList)
+        //添加头部视图
         mAdapter?.addHeaderView(LayoutInflater.from(this).inflate(R.layout.adapter_main_head, vRv, false), false)
         mAdapter?.addHeaderView(LayoutInflater.from(this).inflate(R.layout.adapter_main_head, vRv, false), false)
+        //添加底部视图
         mAdapter?.addFootView(LayoutInflater.from(this).inflate(R.layout.adapter_main_foot, vRv, false), false)
         mAdapter?.addFootView(LayoutInflater.from(this).inflate(R.layout.adapter_main_foot, vRv, false), false)
         vRv.adapter = mAdapter
-        loadData()
+
+        //设置上拉加载更多监听
         mAdapter?.setAdapterLoadMoreListener {
             loadData()
         }
+
+        mAdapter?.setAdapterItemOnClickListener { view, position ->
+
+        }
+
+        loadData()
     }
 
     private fun loadData() {

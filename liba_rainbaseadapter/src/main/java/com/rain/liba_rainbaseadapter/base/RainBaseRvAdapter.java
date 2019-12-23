@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * 支持添加HeaderView,FootView,EmptyView,上拉加载更多View,
  * <p>
- * 显示空试图的时候，不隐藏headView和footView
+ * 显示空视图的时候，不隐藏headView和footView
  * <p>
  * RecyclerView 万能适配器
  * Created by Rain on 2019/3/25 0025
@@ -64,20 +64,16 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
 
     //数据为空的Type
     private static final int EMPTYVIEWTYPE = -10000;
-    //头部Type
-    public static final int HEADTYPE = -20000;
-    //底部Type
-    public static final int FOOTTYPE = -30000;
     //上拉加载Type
     private static final int LOADMORETYPE = -40000;
     /**
      * 标准头部viewType值
      */
-    private final int headerInt = 8000;
+    private static final int headerInt = 8000;
     /**
      * 标准头部viewType值
      */
-    private final int footInt = 9000;
+    private static final int footInt = 9000;
 
     /**
      * 没有数据时的View,上拉加载更多的View
@@ -151,7 +147,7 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
     }
 
     /**
-     * 获取头部试图的个数
+     * 获取头部视图的个数
      *
      * @return
      */
@@ -198,7 +194,7 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
     }
 
     /**
-     * 添加头部的试图
+     * 添加头部的视图
      *
      * @param view
      * @param isNotify 是否通知插入一个条目
@@ -214,7 +210,7 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
     }
 
     /**
-     * 删除一个试图
+     * 删除一个视图
      *
      * @param position
      */
@@ -229,7 +225,7 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
     }
 
     /**
-     * 添加底部的试图
+     * 添加底部的视图
      *
      * @param view
      * @param isNotify 是否通知插入一个条目
@@ -245,7 +241,7 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
     }
 
     /**
-     * 删除一个试图
+     * 删除一个视图
      *
      * @param position
      */
@@ -257,6 +253,15 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
                 notifyDataSetChanged();
             }
         }
+    }
+
+    /**
+     * 删除所有footView
+     */
+    public void removeAllHeadView() {
+        headViews.clear();
+        headerTags.clear();
+        notifyDataSetChanged();
     }
 
     /**
