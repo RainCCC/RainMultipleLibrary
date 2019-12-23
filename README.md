@@ -115,3 +115,80 @@ RainBaseAdapter默认提供了上拉加载更多的View，也可以自定义
     public void setLoadMoreResultListener(RainAdapterLoadMoreClickListener mLoadMoreResultListener) {}
     
 ```
+
+### 事件监听
+```
+    /**
+     * item 点击监听
+     *
+     * @param iOnClickListener
+     */
+    public void setAdapterItemOnClickListener(RainAdapterItemOnClickListener iOnClickListener) {}
+    
+    /**
+     * item 长按监听
+     *
+     * @param iOnLongClickListener
+     */
+    public void setiOnLongClickListener(RainAdapterItemLongClickListener iOnLongClickListener) {}
+    
+     /**
+     * 设置动态监听子View
+     *
+     * @param iOnChildClickListener
+     * @param listenerId
+     */
+    public void setNeedListenerChildId(RainAdapterChildItemOnClickListener iOnChildClickListener, int[] listenerId){}
+    
+    /**
+     * 设置动态监听子View
+     *
+     * @param iOnChildClickListener     子View 点击监听
+     * @param iOnChildLongClickListener 子View 按钮长按监听
+     * @param listenerId                子View的Id
+     */
+    public void setNeedListenerChildId(RainAdapterChildItemOnClickListener iOnChildClickListener
+            , RainAdapterChildItemLongClickListener iOnChildLongClickListener, int[] listenerId) {}
+```
+
+### 移除HeadView、FootView，更新数据
+```
+    /**
+     * 删除一个头部视图
+     *
+     * @param position
+     */
+    public void removeHeaderView(int position, boolean isNotify) {}
+    
+    /**
+     * 删除一个底部视图
+     *
+     * @param position
+     */
+    public void removeFootView(int position, boolean isNotify) {}
+    
+    /**
+     * 删除所有HeadView
+     */
+    public void removeAllHeadView() {}
+    
+    /**
+     * 删除所有FootView
+     */
+    public void removeAllFootView() {}
+    
+    /**
+     * 更新数据将会替换原有数据
+     *
+     * @param list
+     */
+    public void upData(List<T> list) {}
+    
+    /**
+     * 添加数据不清除原有数据
+     *
+     * @param list
+     */
+    public void addData(List<T> list) {}
+    
+```
