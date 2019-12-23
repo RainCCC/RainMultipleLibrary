@@ -4,7 +4,7 @@ RainBaseAdapter是Android RecyclerView的万能适配器，很轻量，支持添
 
 ### 引入方式
 ```
-compile 'com.rain:RainBaseAdapter:1.0.0'
+compile 'com.rain:RainBaseAdapter:1.1.0'
 ```
 基于AndroidX开发，使用前请确保代码已升级为AndroidX
 
