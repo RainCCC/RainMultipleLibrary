@@ -425,24 +425,25 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
         } else {
             //如果是数据的话
             final int dataPosition = position - headViews.size();
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (null != iOnClickListener) {
+
+            if (null != iOnClickListener) {
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
                         iOnClickListener.onClick(v, dataPosition);
                     }
-                }
+                });
+            }
 
-            });
-            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    if (null != iOnLongClickListener) {
+            if (null != iOnLongClickListener) {
+                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
                         iOnLongClickListener.onClick(v, dataPosition);
+                        return false;
                     }
-                    return false;
-                }
-            });
+                });
+            }
 
 
             //监听子View
@@ -450,23 +451,23 @@ public abstract class RainBaseRvAdapter<T> extends RecyclerView.Adapter<RainBase
                 if (childId.length > 0) {
                     for (Integer integer : childId) {
                         if (null != holder.getView(integer)) {
-                            holder.getView(integer).setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    if (null != iOnChildClickListener) {
+                            if (null != iOnChildClickListener) {
+                                holder.getView(integer).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
                                         iOnChildClickListener.onClick(v, dataPosition);
                                     }
-                                }
-                            });
-                            holder.getView(integer).setOnLongClickListener(new View.OnLongClickListener() {
-                                @Override
-                                public boolean onLongClick(View v) {
-                                    if (null != iOnChildClickListener && isListenerChildLongClick) {
+                                });
+                            }
+                            if (null != iOnChildClickListener && isListenerChildLongClick) {
+                                holder.getView(integer).setOnLongClickListener(new View.OnLongClickListener() {
+                                    @Override
+                                    public boolean onLongClick(View v) {
                                         iOnChildLongClickListener.onClick(v, dataPosition);
+                                        return false;
                                     }
-                                    return false;
-                                }
-                            });
+                                });
+                            }
                         }
                     }
                 }
